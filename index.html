@@ -1,30 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <!-- <meta name="viewport" content=""> -->
-    <title> Jasper Cussac </title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title> Portfolio </title>
 
+  <link href="https://fonts.googleapis.com/css?family=Mina|Montserrat" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
 
 <body>
 <header>
-  <div class="navigation_header">
-    <nav>
-        <p class="j_logo"> J </p>
-        <a href="portfolio.html">PORTFOLIO</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
+<!-- Navigation starts here -->
+  <div class="navigationHeader">
+    <div class="logo">
+      <p class="j_logo"> J </p>
+    </div>
+    <div class="links">
+      <ul>
+        <li><a href="index.html">PORTFOLIO</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
   </div>
+<!-- Navigation ends here -->
 </header>
 
-
 <main>
+<!-- Portfolio sections start here -->
+  <div class="wrapper" id="rembrandt">
+    <div class="portfolioHeading">
+      <h1> The OLD MASTERS: REMBRANDT </h1>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="portfolioImages">
+      <img srcset="assets/rembrandt_wide.jpg 960px, assets/rembrandt_tablet.jpg 768px, assets/rembrandt_mobile.jpg 320px" src="assets/rembrandt.jpg" alt="Rembrandt self-portrait reproduction drawing">
+      <img srcset="assets/fidelcastro.jpg 960px, assets/fidelcastro_tablet.jpg 768px, assets/rembrandt_mobile.jpg 320px" src="assets/fidelcastro.jpg" alt="Fidel Castoo drawing in the style of Rembrandt">
+    </div>
+  </div>
 
+  <div class="wrapper" id="graffitiTree">
+    <div class="portfolioHeading">
+      <h1> EXPLORATION OF URBAN AND NATURAL </h1>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <div class="portfolioImages">
+      <img srcset="assets/graffititree_wide.jpg 960px, assets/graffititree_tablet.jpg 768px, assets/graffititree.jpg 320px" src="assets/graffititree.jpg" alt="Graffit tree collage" >
+    </div>
+  </div>
 
+  <div class="wrapper" id="bookCovers">
+    <div class="portfolioHeading">
+      <h1>BOOK COVERS</h1>
+      <h2><i>The Stranger</i>, Albert Camus<br><i>Rule of the Bone</i>, Russell Banks</h2>
+    </div>
+    <div class="portfolioImages">
+      <img srcset="assets/ruleofthebone_wide.jpg 960px, assets/ruleofthebone_tablet.jpg 768px, assets/ruleofthebone_mobile 320px" src="assets/ruleofthebone.jpg" alt="Rule of the Bone, Russell Banks, front cover">
+      <img srcset="assets/thestranger_wide.jpg 960px, assets/thestranger_tablet.jpg 768px, assets/thestranger_mobile.jpg" src="assets/thestranger.jpg" alt="The Stranger, Alber Camus, front cover">
+    </div>
+  </div>
+
+  <div class="wrapper" id="userInterface">
+    <div class="portfolioHeading">
+      <h1>USER INTERFACE DESIGN</h1>
+      <h2>Jamaica Observer, a redesign</h2>
+    </div>
+    <div class="portfolioImages">
+      <a href="http://www.jamaicaobserver.com/">www.jamaicaobserver.com</a>
+      <a href="https://preview.uxpin.com/e9f05e40c71d8aaa5d4ee8cc0c57b1629fb95a46">www.preview.uxpin.com</a>
+    </div>
+  </div>
+<!-- Portfolio sections end here -->
 </main>
+
+<footer>
+<!-- footer starts here -->
+  <div class="footer">
+    <div class="footerTop">
+      <h3>Jasper<b>Cussac</b></h3>
+      <p>jasper.cussac@gmail.com</p>
+    </div>
+    <div class="links">
+      <ul>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- footer ends here -->
+</footer>
 </body>
 
 </html>

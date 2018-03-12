@@ -1,211 +1,416 @@
 * {
   box-sizing: border-box;
 }
-
 html {
   font-size: 100%;
   font-family: Helvetica, Arial, sans-serif;
 }
-
 body {
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-
-@media print {
- body > *:not(main) {
- display: none;
- }
-}
-
 h1 {
-  font-weight: 450;
-  font-size: 2.5rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-family: 'Mina', sans-serif;
 }
-
 h2 {
-  font-weight: 300;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
-
 p {
   font-size: 1rem;
   line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+main {
+  margin-top: 10%;
+}
+a {
+  font-family: 'Montserrat', sans-serif;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
 }
 
-/* Navigation starts here */
-  .navigation_header {
-    background-color: rgba(255, 255, 255, .6);
-  }
-
-  .navigation_header .links a {
-    font-family: helvetica;
-    font-weight: 700;
-    font: 1rem;
-    color: black;
-    text-decoration: none;
-    padding-bottom: .7rem;
-  }
-
-  .navigation_header .links a:hover {
-
-  }
-
-  .navigation_header .links a:focus {
-
-  }
-
-  @media screen and (min-width: 768px){ /* Tablet */
-    .navigation_header {
-      display: grid;
-      grid-template-columns: .33fr .66fr;
-      grid-template-areas: 'logo links';
-      align-items: center;
+/* navigation starts here */
+  /* mobile starts here */
+    .navigationHeader {
+      background-color: rgba(255, 255, 255, .6);
       position: fixed;
       top: 0;
       width: 100%;
-      height: 10%;
-    }
-
-    .navigation_header .logo {
-      display: flex;
+      display: grid;
+      grid-template-areas: '. logo .' 'navLinks navLinks navLinks';
+      align-content: center;
       justify-content: center;
     }
-
-    .navigation_header .links {
+    .navigationHeader .j_logo {
+      grid-area: logo;
+    }
+    .links {
+      grid-area: navLinks;
+    }
+    .navigationHeader ul {
+      list-style-type: none;
+      -webkit-padding-start: 0;
       display: flex;
+      flex-direction: row;
       justify-content: space-around;
-      grid-area: links;
+      padding: 0 10%;
+
     }
-  }
-
-  @media screen and (min-width: 960px){ /* Computer */
-    .navigation_header {
-      height: 15%;
+    .links {
+      width: 100%;
     }
-  }
-
-  .navigation_header .logo p.j_logo {
-    font-size: 2rem;
-    font-weight: 800;
-  }
-
-    .navigation_header .links a {
-      font-family: helvetica;
+    .links a {
       font-weight: 700;
       font: 1rem;
       color: black;
       text-decoration: none;
       padding-bottom: .7rem;
     }
-
-    .navigation_header a:hover {
+    .navigationHeader a:hover {
       border-bottom-width: .5rem;
       border-bottom-color: black;
       border-bottom-style: solid;
     }
-/* Navigation ends here */
+  /* mobile ends here */
 
+  /* tablet starts here */
+    @media screen and (min-width: 768px) {
+      .navigationHeader {
+        display: grid;
+        grid-template-columns: .33fr .66fr;
+        grid-template-areas: 'logo links';
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 11%;
+      }
+      .navigationHeader .logo {
+        display: flex;
+        justify-content: center;
+      }
 
-/* Portfolio starts here */
-  #userinterface {
-    background-color: rgba(235, 36, 26, 0.5);
-    color: white;
-  }
-
-  #graffiti_tree {
-    background-color: black;
-    color: white;
-  }
-
-  .portfolio_section {
-    padding: 5% 5%;
-  }
-
-  @media screen and (min-width: 768px) {
-    .portfolio_section {
-      padding: 10% 10%;
+      .navigationHeader .links {
+        grid-area: links;
+        font-size: 1.15rem;
+      }
+      .navigationHeader ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
-  }
+  /* tablet ends here */
 
+  /* wide starts here */
+    @media screen and (min-width: 960px) {
+      .navigation_header {
+        height: 15%;
+      }
+    }
+
+    .navigationHeader .logo p.j_logo {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+      .navigationHeader .links a {
+        font-weight: 900;
+        font: 1rem;
+        color: black;
+        text-decoration: none;
+        padding-bottom: .7rem;
+      }
+    /* wide ends here */
+/* navigation ends here */
+
+
+/* portfolio starts here */
+  /* mobile starts here */
+  .wrapper {
+    padding: 4rem 7%;
+  }
+  .wrapper h1 {
+    border-top: .1rem solid black;
+    padding-top: 1rem;
+  }
+  .wrapper h2 {
+    padding-bottom: 1rem;
+  }
+  .wrapper p {
+    padding: .5rem 3rem 1rem 0;
+  }
+  .wrapper img {
+    width: 100%;
+  }
+  .portfolioHeading {
+    padding: 1rem 0 1rem 0;
+    margin: 0 2rem 0 1rem;
+  }
+    #graffitiTree {
+      background-color: black;
+      color: white;
+    }
+    #graffitiTree h1 {
+      border-top-color: white;
+    }
+    #bookCovers {
+      background-color: rgba(222, 194, 154, 0.5);
+    }
+    #bookCovers .portfolioImages {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    #bookCovers img {
+      width: 46%;
+      height: auto;
+    }
+    #userInterface {
+      background-color: rgba(235, 36, 26, 0.5);
+      color: white;
+    }
+    #userInterface a {
+      text-decoration: none;
+      color: #284BC4;
+      font-size: 1.5rem;
+
+    }
+  /* mobile ends here */
+
+  /* tablet starts here */
+    @media screen and (min-width: 768px) {
+      .wrapper {
+        padding: 4rem 7% 4rem 7%;
+      }
+      .wrapper h1 {
+        border-top: .1rem solid black;
+        padding-top: 1.25rem;
+        padding-right: 4rem;
+      }
+      .wrapper h2 {
+        padding-bottom: 1rem;
+      }
+      .wrapper p {
+        padding: .5rem 3rem 1rem 0;
+        max-width: 58ch;
+      }
+      .wrapper img {
+        width: 100%;
+      }
+      .portfolioHeading {
+        padding: 1rem 0 1rem 0;
+        margin: 0 2rem 0 1rem;
+      }
+        #rembrandt .portfolioImages {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        #rembrandt img {
+          width: 48%;
+          height: auto;
+        }
+        #graffitiTree {
+          background-color: black;
+          color: white;
+        }
+        #graffitiTree h1 {
+          border-top-color: white;
+        }
+        #graffitiTree img {
+          height: 70vw;
+          width: auto;
+        }
+      #bookCovers .portfolioImages {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+        }
+        #bookCovers img {
+          width: 48%;
+          height: 48%;
+        }
+        #userInterface a {
+          font-size: 1.5rem;
+        }
+        #userInterface .portfolioImages {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+        }
+      }
+  /* tablet ends here */
+
+  /* wide starts here */
   @media screen and (min-width: 960px) {
-    .portfolio_section {
-      padding: 10% 5%;
+    .wrapper {
+      padding: 4rem 2%;
+      display: grid;
+      grid-template: '40% 1fr';
+      grid-template-areas: 'porfolioHeading portfolioImages';
+      align-items: start;
     }
-  }
-/* Porfolio ends here */
+    .wrapper h1 {
+      border-top: .1rem solid black;
+      padding-top: 1.25rem;
+      padding-right: 4rem;
 
-
-/* About starts here */
-  #about {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  @media screen and (min-width: 768px) {
-    #about {
-      margin: 10%;
+    }
+    .wrapper h2 {
+      padding-bottom: 1rem;
+    }
+    .wrapper p {
+      padding: .5rem 3rem 1rem 0;
+      max-width: 58ch;
+    }
+    .wrapper img {
+      width: 100%;
+    }
+    .portfolioHeading {
+      grid-area: portfolioHeading;
+      padding: 1rem 0 1rem 0;
+      margin: 0 2rem 0 1rem;
+    }
+    .portfolioImages {
+      grid-area: portfolioImages;
       display: flex;
       flex-direction: column;
     }
-
-    #about #jasper_image {
-
-    }
-
-    #about #about_bio p {
-      margin-left: 10%;
-
-    }
-  }
-
-  @media screen and (min-width: 960px) {
-    #about {
-        margin-top: 15%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 'jasper_image about_bio';
-        margin-left: 10%;
-        margin-right: 10%;
-      }
-
-      #jasper_image {
-        grid-area: jasper_image;
-      }
-
-      #about_bio {
-        grid-area: about_bio;
+      #rembrandt .portfolioImages {
         display: flex;
         flex-direction: column;
       }
-  }
-/* About ends here */
+      #rembrandt img {
+        width: 48%;
+        height: auto;
+      }
+      #graffitiTree img {
+        height: 70vw;
+        width: auto;
+      }
+      #bookCovers .portfolioImages {
+        display: flex;
+        flex-direction: column;
+      }
+      #bookCovers img {
+        width: 48%;
+        height: 48%;
+      }
+      #userInterface a {
+        font-size: 1.5rem;
+      }
+      #userInterface .portfolioImages {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+    }
+  /* wide ends here */
+/* porfolio ends here */
 
 
-/* Contact starts here */
-  @media screen and (min-width: 768) {
+/* about starts here */
+  /* mobile starts here */
+  /* mobile ends here */
 
-  }
+  /* tablet starts here */
+    @media screen and (min-width: 768px) {
+      #about {
+        margin: 10%;
+        display: flex;
+        flex-direction: column;
+      }
+      #aboutText {
+        padding: 0 10%;
+      }
+    }
+  /* tablet ends here */
 
-  @media screen and (min-width: 960)
+  /* wide starts here */
+    @media screen and (min-width: 960px) {
+      #aboutContent {
+          margin-top: 15%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'jasper_image about_bio';
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        #jasperImage {
+          grid-area: jasper_image;
+        }
 
-  }
-/* Contact ends here */
+        #aboutText {
+          grid-area: about_bio;
+          display: flex;
+          flex-direction: column;
+        }
+    }
+  /* wide ends here */
+/* about ends here */
+
+
+/* contact starts here */
+    @media screen and (min-width: 768px) {
+
+    }
+
+    @media screen and (min-width: 960px) {
+
+    }
+/* contact ends here */
 
 
 /* footer starts here */
-  .footer {
-    margin-top: 2rem;
-    border-top: .25rem solid black;
-  }
-
-  .footer .navigation_footer a {
-    font-weight: 700;
-    font: 1rem;
-    color: black;
-    text-decoration: none;
-    padding-bottom: .7rem;
-  }
+  /* mobile starts here */
+    .footer {
+      border-top: .5rem solid black;
+      padding: 1rem 0;
+    }
+    .footer h3 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+    .footer p {
+      text-align: center;
+    }
+    .footer ul {
+      display: grid;
+      grid-template-areas: 'navLinks navLinks navLinks';
+      align-content: center;
+      justify-content: center;
+      -webkit-padding-start: 0;
+      list-style-type: none;
+    }
+  /* mobile ends here
 
 /* footer ends here */
