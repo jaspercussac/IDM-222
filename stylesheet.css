@@ -6,7 +6,7 @@ html {
   font-family: Helvetica, Arial, sans-serif;
 }
 body {
-  width: 100%;
+  max-width: 100%;
   margin: 0px;
   padding: 0px;
 }
@@ -15,8 +15,12 @@ h1 {
   font-size: 1.7rem;
   line-height: 1.2;
   font-family: 'Mina', sans-serif;
+  letter-spacing: 1px;
+  border-top: .1rem solid black;
+  padding-top: 1rem;
 }
 h2 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   font-weight: 400;
 }
@@ -26,22 +30,27 @@ p {
   font-family: 'Montserrat', sans-serif;
 }
 main {
-  margin-top: 10%;
+  margin-top: 5.7rem;
 }
 a {
   font-family: 'Montserrat', sans-serif;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
+    border-top: .1rem solid black;
+    padding-top: 1.25rem;
   }
   h2 {
     font-size: 1.5rem;
   }
+  main {
+    margin-top: 10%;
+  }
 }
 @media screen and (min-width: 960px) {
   h1 {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
   p {
     font-size: 1.15rem;
@@ -57,12 +66,16 @@ a {
       top: 0;
       width: 100%;
       display: grid;
-      grid-template-areas: '. logo .' 'navLinks navLinks navLinks';
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 2.5rem 2rem;
+      grid-template-areas: '. logo .' / 'navLinks navLinks navLinks';
       align-content: center;
-      justify-content: center;
+      grid-row-gap: 0;
     }
     .navigationHeader .j_logo {
       grid-area: logo;
+      font-size: 2rem;
+      font-weight: 800;
     }
     .links {
       grid-area: navLinks;
@@ -73,8 +86,9 @@ a {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      padding: 0 10%;
-
+    }
+    .navigationHeader ul li {
+      margin: 0 1rem;
     }
     .links {
       width: 100%;
@@ -97,19 +111,17 @@ a {
     @media screen and (min-width: 768px) {
       .navigationHeader {
         display: grid;
-        grid-template-columns: .33fr .66fr;
-        grid-template-areas: 'logo links';
-        align-items: center;
+        grid-template-columns: 7% .34fr .66fr 7%;
+        grid-template-areas: '. logo links .';
+        align-content: center;
         position: fixed;
         top: 0;
         width: 100%;
         height: 11%;
       }
-      .navigationHeader .logo {
-        display: flex;
-        justify-content: center;
+      .j_logo {
+        grid-area: logo;
       }
-
       .navigationHeader .links {
         grid-area: links;
         font-size: 1.15rem;
@@ -124,23 +136,21 @@ a {
 
   /* wide starts here */
     @media screen and (min-width: 960px) {
-      .navigation_header {
-        height: 15%;
+      .navigationHeader {
+        height: 10%;
+        padding-right: 3rem;
+        display: grid;
+        grid-template-columns: 15% .34fr .66fr 15%;
+        grid-template-areas: '. logo links .'
       }
-    }
-
-    .navigationHeader .logo p.j_logo {
-      font-size: 2rem;
-      font-weight: 800;
-    }
-
-      .navigationHeader .links a {
-        font-weight: 900;
-        font: 1rem;
-        color: black;
-        text-decoration: none;
-        padding-bottom: .7rem;
+        .j_logo {
+          grid-area: logo;
+        }
+        .navigationHeader .links {
+          grid-area: links;
+        }
       }
+
     /* wide ends here */
 /* navigation ends here */
 
@@ -148,24 +158,19 @@ a {
 /* portfolio starts here */
   /* mobile starts here */
   .wrapper {
-    padding: 4rem 7%;
+    padding: 2.5rem 7%;
   }
   .wrapper h1 {
-    border-top: .1rem solid black;
-    padding-top: 1rem;
+    padding-bottom: .7rem;
   }
   .wrapper h2 {
     padding-bottom: 1rem;
   }
   .wrapper p {
-    padding: .5rem 3rem 1rem 0;
+    padding: 0 7% .2rem 0;
   }
   .wrapper img {
     width: 100%;
-  }
-  .portfolioHeading {
-    padding: 1rem 0 1rem 0;
-    margin: 0 2rem 0 1rem;
   }
     #graffitiTree {
       background-color: black;
@@ -185,7 +190,7 @@ a {
     }
     #bookCovers img {
       width: 46%;
-      height: auto;
+      height: 46%;
     }
     #userInterface {
       background-color: rgba(235, 36, 26, 0.5);
@@ -195,18 +200,15 @@ a {
       text-decoration: none;
       color: #284BC4;
       font-size: 1.5rem;
-
     }
   /* mobile ends here */
 
   /* tablet starts here */
     @media screen and (min-width: 768px) {
       .wrapper {
-        padding: 4rem 7% 4rem 7%;
+        padding: 3.5rem 7% 6rem 7%;
       }
       .wrapper h1 {
-        border-top: .1rem solid black;
-        padding-top: 1.25rem;
         padding-right: 4rem;
       }
       .wrapper h2 {
@@ -222,6 +224,9 @@ a {
       .portfolioHeading {
         padding: 1rem 0 1rem 0;
         margin: 0 2rem 0 1rem;
+      }
+      #rembrandt {
+        padding-top: 0;
       }
         #rembrandt .portfolioImages {
           display: flex;
@@ -255,14 +260,23 @@ a {
           width: 48%;
           height: 48%;
         }
+        #userInterface .portfolioImages {
+          display: grid;
+          grid-template: '1fr 1fr' '1fr 1fr';
+          grid-template-areas: 'originalLink redesignLink' 'prototypeImage prototypeImage';
+          grid-row-gap: 1.5rem;
+        }
         #userInterface a {
           font-size: 1.5rem;
         }
-        #userInterface .portfolioImages {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          justify-content: space-between;
+        #userInterface #originalJamaicaObserver {
+          grid-area: originalLink;
+        }
+        #userInterface #redesignJamaicaObserver {
+          grid-area: redesignLink;
+        }
+        #userInterface img {
+          grid-area: prototypeImage;
         }
       }
   /* tablet ends here */
@@ -270,85 +284,40 @@ a {
   /* wide starts here */
   @media screen and (min-width: 960px) {
     .wrapper {
-      padding: 4rem 2%;
-      display: grid;
-      grid-template: '40% 1fr';
-      grid-template-areas: 'porfolioHeading portfolioImages';
-      align-items: start;
+      padding: 4rem 15% 7rem 15%;
     }
-    .wrapper h1 {
-      border-top: .1rem solid black;
-      padding-top: 1.25rem;
-      padding-right: 4rem;
 
-    }
-    .wrapper h2 {
-      padding-bottom: 1rem;
-    }
-    .wrapper p {
-      padding: .5rem 3rem 1rem 0;
-      max-width: 58ch;
-    }
-    .wrapper img {
-      width: 100%;
-    }
-    .portfolioHeading {
-      grid-area: portfolioHeading;
-      padding: 1rem 0 1rem 0;
-      margin: 0 2rem 0 1rem;
-    }
-    .portfolioImages {
-      grid-area: portfolioImages;
-      display: flex;
-      flex-direction: column;
-    }
-      #rembrandt .portfolioImages {
-        display: flex;
-        flex-direction: column;
-      }
-      #rembrandt img {
-        width: 48%;
-        height: auto;
-      }
-      #graffitiTree img {
-        height: 70vw;
-        width: auto;
-      }
-      #bookCovers .portfolioImages {
-        display: flex;
-        flex-direction: column;
-      }
-      #bookCovers img {
-        width: 48%;
-        height: 48%;
-      }
-      #userInterface a {
-        font-size: 1.5rem;
-      }
-      #userInterface .portfolioImages {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-      }
-    }
+  }
   /* wide ends here */
 /* porfolio ends here */
 
 
 /* about starts here */
   /* mobile starts here */
+  #aboutContent {
+    max-width: 100%;
+    padding: 0 7%;
+  }
+  #aboutImage {
+    max-width: 100%;
+  }
+  #aboutImage picture {
+    max-width: 100%;
+  }
+  #aboutText p {
+    padding-right: 7%;
+  }
   /* mobile ends here */
 
   /* tablet starts here */
     @media screen and (min-width: 768px) {
-      #about {
-        margin: 10%;
-        display: flex;
-        flex-direction: column;
+
+
+      #aboutText p {
+        max-width: 57ch;
       }
-      #aboutText {
-        padding: 0 10%;
+      #aboutText h1 {
+
       }
     }
   /* tablet ends here */
@@ -356,61 +325,134 @@ a {
   /* wide starts here */
     @media screen and (min-width: 960px) {
       #aboutContent {
-          margin-top: 15%;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-areas: 'jasper_image about_bio';
-          margin-left: 10%;
-          margin-right: 10%;
-        }
-        #jasperImage {
-          grid-area: jasper_image;
-        }
-
-        #aboutText {
-          grid-area: about_bio;
-          display: flex;
-          flex-direction: column;
-        }
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 15%;
+      }
+      #aboutImage {
+        flex-grow: 1.2;
+      }
+      #aboutImage img {
+        max-width: 90%;
+      }
+      #aboutText {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 90%;
+      }
+      #aboutText p {
+        max-width: 40ch;
+      }
     }
   /* wide ends here */
 /* about ends here */
 
 
 /* contact starts here */
+  /* mobile starts here */
+    #contact {
+      margin: 10rem 7%;
+    }
+    #contact ul {
+      list-style-type: none;
+      -webkit-padding-start: 0;
+    }
+    #contact ul li a {
+      color: #284BC4;
+      text-decoration: line-through;
+    }
+    #contact ul li a:hover {
+      text-decoration: none;
+    }
+    #contact ul li a:visited {
+      color: #396908;
+    }
+  /* mobile ends here */
+
+  /* tablet starts here */
     @media screen and (min-width: 768px) {
-
+      #contact {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
     }
+  /* tablet ends here */
 
+  /* wide starts here */
     @media screen and (min-width: 960px) {
-
+      #contact {
+        margin-left: 15%;
+        margin-right: 15%;
+      }
+      #contact p {
+        max-width: 50ch;
+      }
     }
+  /* wide ends here */
 /* contact ends here */
 
 
 /* footer starts here */
   /* mobile starts here */
     .footer {
-      border-top: .5rem solid black;
-      padding: 1rem 0;
+      padding: 1rem 0 3rem;
     }
-    .footer h3 {
+    .footerTop h3 {
+      font-family: 'Montserrat', sans-serif;
       text-align: center;
       font-size: 2rem;
       font-weight: 300;
-      margin-bottom: 0;
     }
-    .footer p {
+    .footerTop {
       text-align: center;
+      font-family: 'Montserrat', sans-serif;
     }
-    .footer ul {
+    .footerTop a {
+      text-decoration: line-through;
+      text-align: center;
+      color: black;
+    }
+    .footerTop a:hover {
+      text-decoration: none;
+    }
+    .footerLinks ul {
       display: grid;
-      grid-template-areas: 'navLinks navLinks navLinks';
+      grid-template-areas: 'footerNavLinks footerNavLinks footerNavLinks';
       align-content: center;
-      justify-content: center;
+      justify-content: space-around;
       -webkit-padding-start: 0;
       list-style-type: none;
     }
-  /* mobile ends here
+    .footerLinks ul li a {
+      color: black;
+      text-decoration: none;
+    }
+    .footerLinks ul li a:hover {
+      border-bottom-width: .5rem;
+      border-bottom-color: black;
+      border-bottom-style: solid;
+      padding: 1rem 0 1rem;
+    }
+  /* mobile ends here */
+
+  /* tablet starts here */
+    @media screen and (min-width: 768px) {
+      .footer {
+        padding: 0 9%;
+      }
+    }
+  /* tablet ends here */
+
+  /* wide starts here */
+    @media screen and (min-width: 769px) {
+      .footer {
+        padding: 0 15% 4rem;
+      }
+    }
+  /* wide ends here */
 
 /* footer ends here */
